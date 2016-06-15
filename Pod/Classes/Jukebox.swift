@@ -434,7 +434,7 @@ public class Jukebox : NSObject, JukeboxItemDelegate {
     }
     
     private func configureObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleStall", name: AVPlayerItemPlaybackStalledNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleStall), name: AVPlayerItemPlaybackStalledNotification, object: nil)
     }
     
     // MARK:- Notifications -
@@ -460,7 +460,7 @@ public class Jukebox : NSObject, JukeboxItemDelegate {
     }
     
     private func registerForPlayToEndNotification(withItem item: AVPlayerItem) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidPlayToEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: item)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerItemDidPlayToEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: item)
     }
     
     private func unregisterForPlayToEndNotification(withItem item : AVPlayerItem) {
