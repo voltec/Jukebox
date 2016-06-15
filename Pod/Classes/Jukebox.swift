@@ -225,12 +225,12 @@ public class Jukebox : NSObject, JukeboxItemDelegate {
     
     private (set) public var playIndex       =   0
     private (set) public var queuedItems     :   [JukeboxItem]!
-    private (set) public var continuousPlayback: Bool = true
     private (set) public var state           =   JukeboxState.Ready {
         didSet {
             self.delegate?.jukeboxStateDidChange(self)
         }
     }
+    public var continuousPlayback: Bool = true
     
     // MARK:  Computed
     
